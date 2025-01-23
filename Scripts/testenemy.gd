@@ -6,11 +6,14 @@ extends CharacterBody2D
 
 class_name FrogEnemy
 const speed = 10
-var dir: Vector2
-var is_frog_chase: bool
-var player: CharacterBody2D
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 var gravity = 900
+var dir: Vector2
+
+var player: CharacterBody2D
+var player_in_area = false
+var is_frog_chase: bool = false
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var health = 50
 var health_max = 50
@@ -35,18 +38,14 @@ func _process(delta: float) -> void:
 	move(delta)
 	handle_animation()
 	
-	if is_on_floor() and dead:
-		await get_tree().create_timer(3.0).timeout # timer needs changing. too long
-		self.queue_free()
-
-	
 	
 	
 func move(delta):
 	player = Global.playerBody
 	if !dead:
 		if !taking_damage and is_frog_chase:
-			velocity = position.direction_to(player.position) * speed
+			var dir_to_player = position.direction_to(player.position) * speed
+			velocity.x = dir_to_player.x
 			dir.x = (abs(velocity.x)/ velocity.x)
 		if taking_damage:
 			var knockback_dir = position.direction_to(player.position) * -50
@@ -62,19 +61,21 @@ func move(delta):
 
 
 func handle_animation():
-	if !dead and !taking_damage:
+	if !dead and !taking_damage and !is_dealing_damage:
 		animated_sprite.play("hop")
 		if dir.x == -1:
 			animated_sprite.flip_h = true
-		if dir.x == 1:
+		elif dir.x == 1:
 			animated_sprite.flip_h = false
-	elif !dead and taking_damage:
+	elif !dead and taking_damage and !is_dealing_damage:
 		animated_sprite.play("hurt")
 		await get_tree().create_timer(0.8).timeout#adjust the number in the purse to the length of the animation
 		taking_damage = false
-	elif dead:
+	elif dead and is_roaming:
 		is_roaming = false
 		animated_sprite.play("dead")
+		await get_tree().create_timer(1.0).timeout 
+		handle_death()
 		#these are completely uneeded here but I left them for you, future Lance to repurpose at your lesiure
 		#this turns off collision layers so when dying an enemy can pass through certain collisions.
 		#could be good for ignoring player collision after death, for cutting up corpse innit
@@ -82,7 +83,8 @@ func handle_animation():
 		#set_collision_mask_value(1, false)
 		
 		
-		
+func handle_death():
+	self.queue_free()
 		
 
 ##checks the global script if the thing entering the hitbox is the player's damagezone.
