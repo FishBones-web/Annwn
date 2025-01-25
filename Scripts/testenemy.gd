@@ -1,7 +1,5 @@
 # to fix: The frog picks up velocity the more it moves in one direction, making it speed up
-# but also slide as it turns in a new direction :(
-#If the frog is chasing the player and they jump, he gains y.dir, floating in the air to follow them
-#The frog refuses to accept gravity
+
 extends CharacterBody2D
 
 class_name FrogEnemy
@@ -11,9 +9,10 @@ var dir: Vector2
 
 var player: CharacterBody2D
 var player_in_area = false
-var is_frog_chase: bool = false
+var is_frog_chase: bool = true
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 var health = 50
 var health_max = 50
@@ -23,7 +22,11 @@ var taking_damage: bool = false
 var is_roaming: bool = true
 var damage_to_deal = 20
 var is_dealing_damage: bool = false
-var knockback_force = 200
+
+var corpse : bool = false
+var player_in_carve_zone : bool = false
+
+var playerdead : bool
 
 func _ready() -> void:
 	pass
@@ -34,12 +37,35 @@ func _process(delta: float) -> void:
 		#y is gravity, drags him down. x will prevent him from moving side to side in air
 		velocity.y += gravity * delta
 		velocity.x += 0
+	
+	#updates the global script with the frogs damage and damagezone	
+	Global.frog_DamageAmount = damage_to_deal
+	Global.frog_DamageZone = $FrogDealDamageArea
 		
 	move(delta)
 	handle_animation()
 	
+	#keeps checking the global for playerdead/alive 
+	Global.playerAlive = playerdead
+	if playerdead:
+		is_frog_chase = false
 	
+	#checks if player is in the carve zone and if the frog is a corpse
+	#if yes allows the carve prompt to register and then destroys itself
+	#TODO needs filling out with carving animation and loot
+	if player_in_carve_zone and corpse:
+		print("waiting for input")
+		if Input.is_action_just_pressed("interact"):
+			print("carved frog")
+			corpse = false
+			self.queue_free()
+
 	
+#first updates its version of what "player" is with whats in the global
+#makes sure its not dead. checks that its not taking damage and currently in chase, then finds player pos and directs itself towards
+#checks if taking damage then applies knockback, takes direction of player and pushes itself away
+#checks for not being in chase mode, takes dir(the random direction generator made below) 
+#dead just checks for being dead, y drags it towards ground
 func move(delta):
 	player = Global.playerBody
 	if !dead:
@@ -59,7 +85,7 @@ func move(delta):
 	move_and_slide()
 	
 
-
+#
 func handle_animation():
 	if !dead and !taking_damage and !is_dealing_damage:
 		animated_sprite.play("hop")
@@ -81,10 +107,14 @@ func handle_animation():
 		#could be good for ignoring player collision after death, for cutting up corpse innit
 		#set_collision_layer_value(1, false)
 		#set_collision_mask_value(1, false)
+	elif !dead and is_dealing_damage:
+		animated_sprite.play("attack")
 		
 		
 func handle_death():
-	self.queue_free()
+	corpse = true
+	handle_corpse()
+	
 		
 
 ##checks the global script if the thing entering the hitbox is the player's damagezone.
@@ -118,3 +148,28 @@ func choose(array):
 	array.shuffle()
 	return array.front()
 	
+	#signal from the frog's damage zone, if the area it touches is the same as the global player hitbox, ticks the dealing damage box
+func _on_frog_deal_damage_area_area_entered(area: Area2D) -> void:
+	if area == Global.playerHitbox:
+		is_dealing_damage = true
+		await get_tree().create_timer(1.0).timeout
+		is_dealing_damage = false
+		
+func handle_corpse():
+	print("hande corpse has been called")
+	$FrogDealDamageArea/CollisionShape2D.disabled = true
+	$hitbox/CollisionShape2D.disabled = true
+	$CarveZone/CollisionShape2D.disabled = false
+
+func _on_animated_sprite_2d_animation_finished():
+	if (animated_sprite.animation == "dead"):
+		animated_sprite.play("corpse")
+		
+func _on_carve_zone_body_entered(body) :
+	if body.has_method("player"):
+		player_in_carve_zone = true	
+		print("player in carve zone true")
+
+func _on_carve_zone_body_exited(body) :
+	if body.has_method("player"):
+		player_in_carve_zone = false

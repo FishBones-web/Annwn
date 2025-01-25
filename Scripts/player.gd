@@ -6,25 +6,50 @@ const SPEED = 200
 const JUMP_VELOCITY = -350.0
 
 var gravity = 900
+var fall_gravity = 1400
 
 var in_transition_anim = false
 var attack_type: String
 var current_attack: bool
 var weapon_equip = true
 
+var can_take_damage: bool
+var health = 150
+var max_health = 150
+var min_health = 0
+
+var dead : bool 
+
+func player():
+	pass 
+	
 func _ready():
 	current_attack = false
 	Global.playerBody = self
+	dead = false
+	can_take_damage = true
+	Global.playerAlive = true
 	
+func get_fall_gravity(velocity: Vector2):
+		if velocity.y < 0:
+			return gravity
+		return fall_gravity
+		
 func _physics_process(delta: float) -> void:
 	var weapon_equip = Global.playerWeaponEquip
 	Global.playerDamageZone = deal_damage_zone
+	Global.playerHitbox = $PlayerHitbox
 	
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += get_fall_gravity(velocity) * delta
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
+	##this makes gravity nicer, less floaty
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y = JUMP_VELOCITY / 4
+		
 			
 	var direction = Input.get_axis("move_left", "move_right")	
 	if direction:
@@ -53,6 +78,41 @@ func _physics_process(delta: float) -> void:
 			
 	move_and_slide()
 	handle_movement_animation(direction)
+	
+func check_hitbox():
+	var hitbox_areas = $PlayerHitbox.get_overlapping_areas()
+	var damage: int
+	if hitbox_areas:
+		var hitbox = hitbox_areas.front()
+		if hitbox.get_parent() is FrogEnemy:
+			damage = Global.frog_DamageAmount
+			
+	if can_take_damage:
+		take_damage(damage)
+		
+func take_damage(damage):
+	if damage != 0:
+		if health > 0:
+			health -= damage
+			print("player health: ", health)
+			if health <= 0:
+				health = 0
+				dead = true
+				handle_death_animation()
+			take_damage_cooldown(1.0)
+			
+func handle_death_animation():
+	$CollisionShape2D.position.y = 5
+	animated_sprite.play("die")
+	await get_tree().create_timer(0.5).timeout
+	Global.playerAlive = false
+	await get_tree().create_timer(3.0).timeout
+	self.queue_free()
+	
+func take_damage_cooldown(wait_time):
+	can_take_damage = false
+	await get_tree().create_timer(wait_time).timeout
+	can_take_damage = true
 	
 ##all movement animation. 
 func handle_movement_animation(dir):
@@ -139,3 +199,9 @@ func _on_animated_sprite_2d_animation_finished():
 		current_attack = false
 	if (animated_sprite.animation == "air_attack"):
 		current_attack = false
+
+
+func _on_player_hitbox_area_entered(area: Area2D) -> void:
+	if area == Global.frog_DamageZone:
+		var damage = Global.frog_DamageAmount
+		take_damage(damage)

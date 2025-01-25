@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://dq7w2cqji6um4"]
+[gd_scene load_steps=74 format=3 uid="uid://dq7w2cqji6um4"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_xkir5"]
 [ext_resource type="Texture2D" uid="uid://bk33iq58tpks4" path="res://Assets/Temp assets/Player/Dead/50x50/Dead 1 Sprite Sheet.png" id="2_a8rd8"]
@@ -496,12 +496,14 @@ radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bk4we"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cn2ye"]
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_xkir5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3808p")
-animation = &"weapon_crouch"
+animation = &"die"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 13)
@@ -514,4 +516,10 @@ position = Vector2(14, 2)
 shape = SubResource("CircleShape2D_bk4we")
 disabled = true
 
+[node name="PlayerHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
+shape = SubResource("CapsuleShape2D_cn2ye")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_area_entered"]

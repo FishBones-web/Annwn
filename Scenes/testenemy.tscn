@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://siedjbd7hwvu"]
+[gd_scene load_steps=47 format=3 uid="uid://siedjbd7hwvu"]
 
 [ext_resource type="Script" path="res://Scripts/testenemy.gd" id="1_cmsk0"]
 [ext_resource type="Texture2D" uid="uid://dh8m5076svs0r" path="res://Assets/Temp assets/Enemies/ToxicFrog/GreenBlue/ToxicFrogGreenBlue_Explosion.png" id="2_efjih"]
@@ -30,6 +30,10 @@ region = Rect2(192, 0, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4nmil"]
 atlas = ExtResource("2_j5320")
 region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_potjq"]
+atlas = ExtResource("2_j5320")
+region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tjj3v"]
 atlas = ExtResource("2_efjih")
@@ -170,6 +174,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_potjq")
+}],
+"loop": true,
+"name": &"corpse",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_tjj3v")
 }, {
 "duration": 1.0,
@@ -274,13 +286,16 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5r17"]
-radius = 8.06226
+radius = 6.08276
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hs08"]
-radius = 16.0
+radius = 10.4403
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_01pal"]
-radius = 25.318
+radius = 12.0416
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tb8gg"]
+radius = 20.0
 
 [node name="Testenemy" type="CharacterBody2D"]
 slide_on_ceiling = false
@@ -288,31 +303,36 @@ script = ExtResource("1_cmsk0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e0agm")
-animation = &"attack"
+animation = &"corpse"
 autoplay = "idle"
-frame = 5
-frame_progress = 0.613827
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_c5r17")
 
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(-2, 1)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_0hs08")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [node name="FrogDealDamageArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FrogDealDamageArea"]
-visible = false
-position = Vector2(-2, 0)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_01pal")
 
+[node name="CarveZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarveZone"]
+shape = SubResource("CircleShape2D_tb8gg")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="FrogDealDamageArea" to="." method="_on_frog_deal_damage_area_area_entered"]
+[connection signal="body_entered" from="CarveZone" to="." method="_on_carve_zone_body_entered"]
+[connection signal="body_exited" from="CarveZone" to="." method="_on_carve_zone_body_exited"]
