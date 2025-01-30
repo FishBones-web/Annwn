@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlayerActions" load_steps=2 format=3 uid="uid://b6ylyqbgkbk4c"]
+
+[ext_resource type="Script" path="res://Scripts/player_actions.gd" id="1_8outa"]
+
+[resource]
+script = ExtResource("1_8outa")
+move_left = "move_left"
+move_right = "move_right"
+up = "up"
+down = "down"
+jump = "jump"
+swing1 = "swing1"
+swing2 = "swing2"
