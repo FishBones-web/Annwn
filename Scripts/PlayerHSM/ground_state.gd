@@ -7,6 +7,7 @@ var on_first_frame = true
 
 @export var idle_anim : String = "idle"
 @export var move_anim : String = "run"
+@export var jump_anim : String = "jump"
 
 ##if we use the enter func here, the parent enter func wont run. must call super() to run it manually
 func _enter() -> void:
@@ -19,10 +20,10 @@ func _update(_delta: float) -> void:
 	var velocity : Vector2 = move()
 	
 	if Vector2.ZERO.is_equal_approx(velocity):
-		player.sprite.play(idle_anim)
+		player.animation_player.play(idle_anim)
 		
 	else:
-		player.sprite.play(move_anim)
+		player.animation_player.play(move_anim)
 		
 	##so first checks if blackboard has registered the jump input being made,
 	## then checks blackboard for the current jump counter, makes sure theres no concessive jumps
@@ -32,6 +33,11 @@ func _update(_delta: float) -> void:
 			
 	elif not on_first_frame :
 			dispatch("in_air")	
+			
+	if blackboard.get_var(BBNames.attack_var):
+		dispatch("lightattack")
+	if blackboard.get_var(BBNames.heavyattack_var):
+		dispatch("heavyattack")
 			
 	on_first_frame = false
 
@@ -53,3 +59,5 @@ func jump():
 	player.velocity.y = -player_stats.jump_velocity
 	var current_jumps : int = blackboard.get_var(BBNames.jumps_made_var)
 	blackboard.set_var(BBNames.jumps_made_var, current_jumps + 1)
+	player.animation_player.play(jump_anim)
+	dispatch("jump")

@@ -10,5 +10,5 @@ extends Resource
 @export var down : String = "down"
 @export var jump : String = "jump"
 
-@export var swing1 : String = "swing1"
-@export var swing2 : String = "swing2"
+@export var light_attack : String = "light_attack"
+@export var heavy_attack : String = "heavy_attack"

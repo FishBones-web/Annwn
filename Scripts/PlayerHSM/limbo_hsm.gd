@@ -5,6 +5,7 @@ extends LimboHSM
 
 @export var GroundState : LimboState
 @export var AirState : LimboState
+@export var GroundAttackState : LimboState
 
 
 
@@ -22,5 +23,9 @@ func _ready() -> void:
 func _binding_setup():
 	add_transition(GroundState, AirState, "in_air")
 	add_transition(AirState, GroundState, "on_ground")
+	add_transition(GroundState, AirState, "jump")
+	add_transition(GroundState, GroundAttackState, "lightattack")
+	add_transition(GroundState, GroundAttackState, "heavyattack")
+	add_transition(GroundAttackState, GroundState, "finished")
 
 ####

@@ -16,6 +16,8 @@ var blackboard : Blackboard
 #names the inputs with their type
 var input_direction : Vector2
 var jump : bool
+var L_attack : bool
+var H_attack : bool
 
 ##binds the above input vars to their blackboard property(in BBNames and in the BB manager)
 func _ready() -> void:
@@ -26,6 +28,8 @@ func _ready() -> void:
 	# marks true or false to define if it autoplays
 	blackboard.bind_var_to_property(BBNames.direction_var, self, "input_direction", true)
 	blackboard.bind_var_to_property(BBNames.jump_var, self, "jump", false)
+	blackboard.bind_var_to_property(BBNames.attack_var, self, "L_attack", false)
+	blackboard.bind_var_to_property(BBNames.heavyattack_var, self, "H_attack", false)
 
 func _process(_delta: float) -> void:
 	#assigns the inputs of the input_direction. pulls from the player_input dictionarty
@@ -37,4 +41,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		jump = true
 	elif event.is_action_released(player_actions.jump):
 		jump = false
-		
+	
+	if Input.is_action_just_pressed(player_actions.light_attack):
+		L_attack = true
+	if Input.is_action_just_pressed(player_actions.heavy_attack):
+		H_attack = true
+	

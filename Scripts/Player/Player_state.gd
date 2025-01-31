@@ -6,11 +6,13 @@ extends LimboState
 var player : CharacterBody2D
 var player_stats : PlayerStats
 
+
 #when state is entered
 func _enter():
 	player = agent as CharacterBody2D
-	agent.sprite.play(animation_name)
+	player.animation_player.play(animation_name)
 	player_stats = player.player_stats
 	
+
 	
 	

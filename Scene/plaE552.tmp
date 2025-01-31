@@ -383,16 +383,11 @@ var/jumps_made/type = 2
 var/jumps_made/value = 0
 var/jumps_made/hint = 0
 var/jumps_made/hint_string = "How many jumps the player has made since initial jump"
-var/light_attack/name = &"light_attack"
-var/light_attack/type = 1
-var/light_attack/value = false
-var/light_attack/hint = 0
-var/light_attack/hint_string = "whether the player is trying to attack currently"
-var/heavy_attack/name = &"heavy_attack"
-var/heavy_attack/type = 1
-var/heavy_attack/value = false
-var/heavy_attack/hint = 0
-var/heavy_attack/hint_string = "whether the player is attempting a heavy attack"
+var/attack/name = &"attack"
+var/attack/type = 1
+var/attack/value = false
+var/attack/hint = 0
+var/attack/hint_string = "whether the player is trying to attack currently"
 
 [sub_resource type="Animation" id="Animation_suvah"]
 length = 0.001
@@ -918,9 +913,9 @@ animation_name = "falling"
 
 [node name="GroundAttack" type="LimboState" parent="LimboHSM"]
 script = ExtResource("44_rsm1u")
-attack_1 = "attack_1"
-attack_2 = "attack_2"
-attack_3 = "attack_3"
+attack_2 = "attack_swing2"
+attack_3 = "attack_swing3"
+animation_name = "attack_swing1"
 
 [node name="StateLabel" type="Label" parent="." node_paths=PackedStringArray("limbo_hsm")]
 offset_left = -73.0

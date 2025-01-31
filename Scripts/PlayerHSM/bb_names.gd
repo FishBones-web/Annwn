@@ -5,3 +5,5 @@ class_name BBNames
 static var direction_var : String = "direction"
 static var jump_var : String = "jump"
 static var jumps_made_var : String = "jumps_made"
+static var attack_var : String = "light_attack"
+static var heavyattack_var : String = "heavy_attack"
