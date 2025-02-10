@@ -13,6 +13,4 @@ func _enter():
 	player.animation_player.play(animation_name)
 	player_stats = player.player_stats
 	
-
-	
 	

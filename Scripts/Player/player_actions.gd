@@ -12,3 +12,5 @@ extends Resource
 
 @export var light_attack : String = "light_attack"
 @export var heavy_attack : String = "heavy_attack"
+
+@export var block : String = "block"

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=2 format=3 uid="uid://bp6r4atbya06e"]
+
+[ext_resource type="Script" path="res://Scripts/enemy/EnemyStats.gd" id="1_g42hk"]
+
+[resource]
+script = ExtResource("1_g42hk")
+speed = 300.0
+jump_velocity = 400.0

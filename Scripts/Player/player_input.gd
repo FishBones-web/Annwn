@@ -18,6 +18,7 @@ var input_direction : Vector2
 var jump : bool
 var L_attack : bool
 var H_attack : bool
+var blocking : bool
 
 ##binds the above input vars to their blackboard property(in BBNames and in the BB manager)
 func _ready() -> void:
@@ -30,6 +31,7 @@ func _ready() -> void:
 	blackboard.bind_var_to_property(BBNames.jump_var, self, "jump", false)
 	blackboard.bind_var_to_property(BBNames.attack_var, self, "L_attack", false)
 	blackboard.bind_var_to_property(BBNames.heavyattack_var, self, "H_attack", false)
+	blackboard.bind_var_to_property(BBNames.block_var, self, "blocking", false)
 
 func _process(_delta: float) -> void:
 	#assigns the inputs of the input_direction. pulls from the player_input dictionarty
@@ -44,6 +46,16 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if Input.is_action_just_pressed(player_actions.light_attack):
 		L_attack = true
+	if Input.is_action_just_released(player_actions.light_attack):
+		L_attack = false
+		
 	if Input.is_action_just_pressed(player_actions.heavy_attack):
 		H_attack = true
+	if Input.is_action_just_released(player_actions.heavy_attack):
+		H_attack = false
+		
+	if Input.is_action_just_pressed(player_actions.block):
+		blocking = true
+	elif Input.is_action_just_released(player_actions.block):
+		blocking = false
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=162 format=3 uid="uid://b7rp0enlqexjp"]
+[gd_scene load_steps=111 format=3 uid="uid://b7rp0enlqexjp"]
 
 [ext_resource type="Texture2D" uid="uid://da2ww1nurirgb" path="res://Assets/souls_like_knight_character/ATTACK/attack1.png" id="1_10lld"]
 [ext_resource type="Resource" uid="uid://b4saklttnsrrn" path="res://Scripts/Player/player_stats.tres" id="1_vya3i"]
@@ -9,62 +9,39 @@
 [ext_resource type="Texture2D" uid="uid://h0bjnwqlyh26" path="res://Assets/souls_like_knight_character/ATTACK/attack3.png" id="3_j1aq1"]
 [ext_resource type="Texture2D" uid="uid://bqhjrrnqoenfq" path="res://Assets/souls_like_knight_character/ATTACK/attack4.png" id="4_i6cgl"]
 [ext_resource type="Texture2D" uid="uid://cgm7oy3ehl7ug" path="res://Assets/souls_like_knight_character/ATTACK/attack5.png" id="5_62lnh"]
-[ext_resource type="Texture2D" uid="uid://bhl5ptwf4ihjv" path="res://Assets/souls_like_knight_character/SKY_ATTACK/sky_attack1.png" id="5_ih5ya"]
-[ext_resource type="Texture2D" uid="uid://8uhubq2rcjub" path="res://Assets/souls_like_knight_character/SKY_ATTACK/sky_attack2.png" id="6_0lrwu"]
 [ext_resource type="Texture2D" uid="uid://dpgn46skopjl3" path="res://Assets/souls_like_knight_character/ATTACK/attack6.png" id="6_4y4i7"]
 [ext_resource type="Texture2D" uid="uid://d31b6m81dt62k" path="res://Assets/souls_like_knight_character/ATTACK/attack7.png" id="7_qt830"]
-[ext_resource type="Texture2D" uid="uid://cdv0vf6vbcojk" path="res://Assets/souls_like_knight_character/SKY_ATTACK/sky_attack3.png" id="7_xyaku"]
 [ext_resource type="Texture2D" uid="uid://dtnnat4jnyghv" path="res://Assets/souls_like_knight_character/ATTACK/attack8.png" id="8_lwqlg"]
-[ext_resource type="Texture2D" uid="uid://cjkp0glsxrugv" path="res://Assets/souls_like_knight_character/SKY_ATTACK/sky_attack4.png" id="8_xumkr"]
-[ext_resource type="Texture2D" uid="uid://cgkr7gaoc3agk" path="res://Assets/souls_like_knight_character/SKY_ATTACK/sky_attack5.png" id="9_0r5yo"]
 [ext_resource type="Texture2D" uid="uid://dlf8encjwo5kd" path="res://Assets/souls_like_knight_character/ATTACK/attack9.png" id="9_1yqcx"]
 [ext_resource type="Texture2D" uid="uid://ddwcka8mlthi6" path="res://Assets/souls_like_knight_character/ATTACK/attack10.png" id="10_b6flj"]
-[ext_resource type="Texture2D" uid="uid://15suhbv0kfqc" path="res://Assets/souls_like_knight_character/SKY_ATTACK/sky_attack6.png" id="10_s5w7s"]
-[ext_resource type="Texture2D" uid="uid://i1g03smmbajb" path="res://Assets/souls_like_knight_character/SKY_ATTACK/sky_attack7.png" id="11_6l2us"]
 [ext_resource type="Texture2D" uid="uid://bw8c4ym0fucbt" path="res://Assets/souls_like_knight_character/ATTACK/attack11.png" id="11_vwkjw"]
-[ext_resource type="Texture2D" uid="uid://dooh3chra8f8w" path="res://Assets/souls_like_knight_character/SKY_ATTACK/sky_attack8.png" id="12_7jkjo"]
 [ext_resource type="Texture2D" uid="uid://lhnikh2g1b3d" path="res://Assets/souls_like_knight_character/ATTACK/attack12.png" id="12_ebo0x"]
 [ext_resource type="Texture2D" uid="uid://b5nm3itwchstc" path="res://Assets/souls_like_knight_character/FALLING/fall.png" id="13_bbjj0"]
-[ext_resource type="Texture2D" uid="uid://bryp5boadnceo" path="res://Assets/souls_like_knight_character/SKY_ATTACK/sky_attack9.png" id="13_ill1g"]
-[ext_resource type="Texture2D" uid="uid://clcl2213uxflc" path="res://Assets/souls_like_knight_character/SKY_ATTACK/sky_attack10.png" id="14_28csq"]
 [ext_resource type="Texture2D" uid="uid://ddhp0j3ow51b5" path="res://Assets/souls_like_knight_character/IDLE/idle1.png" id="14_y7v7b"]
 [ext_resource type="Texture2D" uid="uid://cksbllqgoorsp" path="res://Assets/souls_like_knight_character/IDLE/idle2.png" id="15_mddo6"]
-[ext_resource type="Texture2D" uid="uid://bspfphv7ry6b7" path="res://Assets/souls_like_knight_character/SKY_ATTACK/sky_attack11.png" id="15_q3v37"]
-[ext_resource type="Texture2D" uid="uid://d17usk8iesn8q" path="res://Assets/souls_like_knight_character/SKY_ATTACK/sky_attack12.png" id="16_2vhk1"]
 [ext_resource type="Texture2D" uid="uid://cyyracek8ilcr" path="res://Assets/souls_like_knight_character/IDLE/idle3.png" id="16_7rktf"]
 [ext_resource type="Texture2D" uid="uid://c7ld5a0lf4v4q" path="res://Assets/souls_like_knight_character/ATTACK/attack14.png" id="16_sohop"]
 [ext_resource type="Texture2D" uid="uid://da3ye7ox4rseq" path="res://Assets/souls_like_knight_character/IDLE/idle4.png" id="17_0g237"]
-[ext_resource type="Texture2D" uid="uid://dio6hfsj7dn1p" path="res://Assets/souls_like_knight_character/DOWN_SKY_ATTACK/down_sky_attack1.png" id="17_60wgq"]
 [ext_resource type="Texture2D" uid="uid://bwrsjx0vjkusw" path="res://Assets/souls_like_knight_character/ATTACK/attack15.png" id="17_k4vds"]
 [ext_resource type="Texture2D" uid="uid://cgvjt4v3hl5fs" path="res://Assets/souls_like_knight_character/JUMP/jump1.png" id="18_fx385"]
-[ext_resource type="Texture2D" uid="uid://cvyuvcgvf00wh" path="res://Assets/souls_like_knight_character/DOWN_SKY_ATTACK/down_sky_attack2.png" id="18_lbpur"]
 [ext_resource type="Texture2D" uid="uid://ck66ewd6pw7bo" path="res://Assets/souls_like_knight_character/ATTACK/attack16.png" id="18_mgv1i"]
 [ext_resource type="Texture2D" uid="uid://djjfdsnr3scn3" path="res://Assets/souls_like_knight_character/JUMP/jump2.png" id="19_7gmjx"]
-[ext_resource type="Texture2D" uid="uid://ctkm8urmgldfq" path="res://Assets/souls_like_knight_character/DOWN_SKY_ATTACK/down_sky_attack3.png" id="19_i18dh"]
 [ext_resource type="Texture2D" uid="uid://dokg6d8xq1x58" path="res://Assets/souls_like_knight_character/ATTACK/attack17.png" id="19_xdq88"]
 [ext_resource type="Texture2D" uid="uid://dwbt4jvigatvu" path="res://Assets/souls_like_knight_character/ATTACK/attack18.png" id="20_410qf"]
-[ext_resource type="Texture2D" uid="uid://ncypfp7birx4" path="res://Assets/souls_like_knight_character/DOWN_SKY_ATTACK/down_sky_attack4.png" id="20_drwkv"]
 [ext_resource type="Texture2D" uid="uid://b5nw44tnkk2ch" path="res://Assets/souls_like_knight_character/RUN/run1.png" id="20_kb8vk"]
 [ext_resource type="Texture2D" uid="uid://drto36ktplxlj" path="res://Assets/souls_like_knight_character/RUN/run2.png" id="21_cqm4t"]
 [ext_resource type="Texture2D" uid="uid://dkvu2jd7ve1fk" path="res://Assets/souls_like_knight_character/ATTACK/attack19.png" id="21_nmo4d"]
-[ext_resource type="Texture2D" uid="uid://cu50rh8mhul1e" path="res://Assets/souls_like_knight_character/DOWN_SKY_ATTACK/down_sky_attack5.png" id="21_sg3pd"]
-[ext_resource type="Texture2D" uid="uid://b55h0lyg5eevw" path="res://Assets/souls_like_knight_character/DOWN_SKY_ATTACK/down_sky_attack6.png" id="22_hdvxw"]
 [ext_resource type="Texture2D" uid="uid://cesgjeqxovfkl" path="res://Assets/souls_like_knight_character/ATTACK/attack20.png" id="22_lbjkp"]
 [ext_resource type="Texture2D" uid="uid://b68qqihjl65j5" path="res://Assets/souls_like_knight_character/RUN/run3.png" id="22_rroa7"]
-[ext_resource type="Texture2D" uid="uid://dtjvv7pb7ys6p" path="res://Assets/souls_like_knight_character/DOWN_SKY_ATTACK/down_sky_attack7.png" id="23_7ar84"]
 [ext_resource type="Texture2D" uid="uid://c0fw8qch6eskj" path="res://Assets/souls_like_knight_character/RUN/run4.png" id="23_jc6aj"]
 [ext_resource type="Texture2D" uid="uid://d2fs4iecj6svn" path="res://Assets/souls_like_knight_character/ATTACK/attack21.png" id="23_nptpx"]
-[ext_resource type="Texture2D" uid="uid://b0v068fxwf66s" path="res://Assets/souls_like_knight_character/DOWN_SKY_ATTACK/down_sky_attack8.png" id="24_fh6co"]
 [ext_resource type="Texture2D" uid="uid://bbobhtcp055i6" path="res://Assets/souls_like_knight_character/RUN/run5.png" id="24_m7466"]
 [ext_resource type="Texture2D" uid="uid://cx8488ypwd5w5" path="res://Assets/souls_like_knight_character/ATTACK/attack22.png" id="24_p731n"]
-[ext_resource type="Texture2D" uid="uid://da282ovoupkix" path="res://Assets/souls_like_knight_character/DOWN_SKY_ATTACK/down_sky_attack9.png" id="25_mplwu"]
 [ext_resource type="Texture2D" uid="uid://u7h7va65q86v" path="res://Assets/souls_like_knight_character/RUN/run6.png" id="25_p8heo"]
 [ext_resource type="Texture2D" uid="uid://cltj1yayavc2i" path="res://Assets/souls_like_knight_character/ATTACK/attack23.png" id="25_u26pl"]
 [ext_resource type="Texture2D" uid="uid://clpcn7ic27js7" path="res://Assets/souls_like_knight_character/RUN/run7.png" id="26_dappq"]
-[ext_resource type="Texture2D" uid="uid://i57uwnuoqmtf" path="res://Assets/souls_like_knight_character/DOWN_SKY_ATTACK/down_sky_attack10.png" id="26_v32xd"]
 [ext_resource type="Texture2D" uid="uid://daabjacql786y" path="res://Assets/souls_like_knight_character/BLOCK/block1.png" id="27_vd4gx"]
 [ext_resource type="Texture2D" uid="uid://cltyt5l1swu3f" path="res://Assets/souls_like_knight_character/RUN/run8.png" id="27_xlrtc"]
-[ext_resource type="Texture2D" uid="uid://jemsbv0dugcv" path="res://Assets/souls_like_knight_character/DOWN_SKY_ATTACK/down_sky_attack11.png" id="27_y2dtj"]
 [ext_resource type="Script" path="res://Scripts/Player_State_machine/limbo_hsm.gd" id="28_i21vq"]
 [ext_resource type="Texture2D" uid="uid://drjnigiip0cgc" path="res://Assets/souls_like_knight_character/BLOCK/block2.png" id="28_tocxq"]
 [ext_resource type="Texture2D" uid="uid://c5fqoxrwouac7" path="res://Assets/souls_like_knight_character/BLOCK/block3.png" id="29_7v3a6"]
@@ -74,99 +51,6 @@
 [ext_resource type="Script" path="res://Scripts/Player_State_machine/air_state.gd" id="32_iktxn"]
 [ext_resource type="Script" path="res://Scripts/Player_State_machine/ground_attack.gd" id="44_rsm1u"]
 [ext_resource type="Script" path="res://Scripts/Player_State_machine/block_state.gd" id="49_k1puc"]
-[ext_resource type="Script" path="res://Scripts/Player_State_machine/AirAttack.gd" id="73_jo27v"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1etlw"]
-atlas = ExtResource("5_ih5ya")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hi5m7"]
-atlas = ExtResource("6_0lrwu")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vxyko"]
-atlas = ExtResource("7_xyaku")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dewb4"]
-atlas = ExtResource("8_xumkr")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_50f74"]
-atlas = ExtResource("9_0r5yo")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_miyor"]
-atlas = ExtResource("10_s5w7s")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3w4y8"]
-atlas = ExtResource("11_6l2us")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wls48"]
-atlas = ExtResource("12_7jkjo")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dm5qa"]
-atlas = ExtResource("13_ill1g")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1t2wq"]
-atlas = ExtResource("14_28csq")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_05i4r"]
-atlas = ExtResource("15_q3v37")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k4xaj"]
-atlas = ExtResource("16_2vhk1")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_da2xq"]
-atlas = ExtResource("17_60wgq")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ferqu"]
-atlas = ExtResource("18_lbpur")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ostfo"]
-atlas = ExtResource("19_i18dh")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1mn4j"]
-atlas = ExtResource("20_drwkv")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k4ljt"]
-atlas = ExtResource("21_sg3pd")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q7yd7"]
-atlas = ExtResource("22_hdvxw")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qrsyq"]
-atlas = ExtResource("23_7ar84")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6w4nf"]
-atlas = ExtResource("24_fh6co")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_07swm"]
-atlas = ExtResource("25_mplwu")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8dehb"]
-atlas = ExtResource("26_v32xd")
-region = Rect2(0, 0, 120, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oqr2h"]
-atlas = ExtResource("27_y2dtj")
-region = Rect2(0, 0, 120, 90)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7gy2k"]
 atlas = ExtResource("1_10lld")
@@ -342,95 +226,6 @@ region = Rect2(0, 0, 120, 90)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ck17d"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1etlw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hi5m7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vxyko")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dewb4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_50f74")
-}],
-"loop": false,
-"name": &"air_attack1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_miyor")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3w4y8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wls48")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dm5qa")
-}],
-"loop": false,
-"name": &"air_attack2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1t2wq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_05i4r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k4xaj")
-}],
-"loop": true,
-"name": &"air_attack3",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_da2xq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ferqu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ostfo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1mn4j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k4ljt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q7yd7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qrsyq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6w4nf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_07swm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8dehb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oqr2h")
-}],
-"loop": false,
-"name": &"air_attackheavy",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7gy2k")
@@ -721,332 +516,6 @@ tracks/5/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_3vulb"]
-resource_name = "air_attack1"
-length = 0.15
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Facing/AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"air_attack1"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Facing/AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0001, 0.0333333, 0.0666667, 0.1, 0.133333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 0, 1, 2, 3, 4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Facing/Sword/CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, false, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Facing/Sword/CollisionShape2D:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.0333333, 0.0666667, 0.1, 0.133333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2.3, 2.3), Vector2(4.5, 1.8), Vector2(1.8, 1.8), Vector2(1.8, 1.8)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Facing/Sword/CollisionShape2D:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.0333333, 0.0666667, 0.1, 0.133333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [1.5708, 1.5708, 1.5708, 1.5708]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Facing/Sword/CollisionShape2D:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.0333333, 0.0666667, 0.1, 0.133333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(4, 8), Vector2(13, 2), Vector2(4, -5), Vector2(-2, -8)]
-}
-
-[sub_resource type="Animation" id="Animation_r7yro"]
-resource_name = "air_attack2"
-length = 0.12
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Facing/AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"air_attack2"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Facing/AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0001, 0.0333333, 0.0666667, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 0, 1, 2, 3]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Facing/Sword/CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Facing/Sword/CollisionShape2D:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(2.3, 2.3), Vector2(4, 1.8), Vector2(1.8, 3.6)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Facing/Sword/CollisionShape2D:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [1.5708, 1.5708, 1.5708]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Facing/Sword/CollisionShape2D:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(4, -4), Vector2(15, 3), Vector2(-10, 7)]
-}
-
-[sub_resource type="Animation" id="Animation_pysq1"]
-resource_name = "air_attack3"
-length = 0.09
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Facing/AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"air_attack3"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Facing/AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Facing/Sword/CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Facing/Sword/CollisionShape2D:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(6.8, 2.7), Vector2(5.4, 3.7)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Facing/Sword/CollisionShape2D:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.5708, 0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Facing/Sword/CollisionShape2D:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(21, 11), Vector2(22, -11)]
-}
-
-[sub_resource type="Animation" id="Animation_iai2t"]
-resource_name = "air_attackheavy"
-length = 0.94
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Facing/AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"air_attackheavy"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Facing/AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0001, 0.19, 0.223333, 0.256667, 0.323334, 0.39, 0.516667, 0.616667, 0.736667, 0.856667, 0.916667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Facing/Sword/CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.226667, 0.256667, 0.326667, 0.396667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, true, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Facing/Sword/CollisionShape2D:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.186667, 0.226667, 0.256667, 0.296667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(5, 2), Vector2(4.775, 1.91), Vector2(5, 1.8), Vector2(3.3, 3), Vector2(2, 2)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Facing/Sword/CollisionShape2D:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.186667, 0.226667, 0.256667, 0.296667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.918043, 0.884882, 1.89717, 1.5708, 1.5708]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Facing/Sword/CollisionShape2D:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.186667, 0.226667, 0.256667, 0.296667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(20, -9), Vector2(18, -9), Vector2(24, 1), Vector2(22, 10), Vector2(23, 13)]
-}
-tracks/6/type = "method"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("LimboHSM/AirAttack")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.226667, 0.93),
-"transitions": PackedFloat32Array(1, 1, 1),
-"values": [{
-"args": [],
-"method": &"plunge"
-}, {
-"args": [],
-"method": &"bounce"
-}, {
-"args": [],
-"method": &"heavyover"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_votc7"]
 resource_name = "attack_1"
 length = 0.68
@@ -1278,60 +747,6 @@ tracks/5/keys = {
 "values": [true, false, false, false, true, true, true, true, true, true, true, true]
 }
 
-[sub_resource type="Animation" id="Animation_gew5u"]
-resource_name = "block"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Facing/AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"block"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Facing/AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-
-[sub_resource type="Animation" id="Animation_8nn5l"]
-resource_name = "block_cont"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Facing/AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"blocking"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Facing/AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="Animation" id="Animation_btb4i"]
 resource_name = "falling"
 length = 0.05
@@ -1491,13 +906,66 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_gew5u"]
+resource_name = "block"
+length = 0.08
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Facing/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"block"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Facing/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_8nn5l"]
+resource_name = "block_cont"
+length = 0.01
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Facing/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"blocking"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Facing/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dy12k"]
 _data = {
 "RESET": SubResource("Animation_suvah"),
-"air_attack1": SubResource("Animation_3vulb"),
-"air_attack2": SubResource("Animation_r7yro"),
-"air_attack3": SubResource("Animation_pysq1"),
-"air_attackheavy": SubResource("Animation_iai2t"),
 "attack_1": SubResource("Animation_votc7"),
 "attack_2": SubResource("Animation_wbqi2"),
 "attack_3": SubResource("Animation_esjf0"),
@@ -1510,17 +978,16 @@ _data = {
 "run": SubResource("Animation_lac43")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "animation_player") groups=["Player"]]
-collision_layer = 4
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "animation_player")]
 script = ExtResource("1_y4f1i")
 sprite = NodePath("Facing/AnimatedSprite2D")
 player_stats = ExtResource("1_vya3i")
 player_actions = ExtResource("2_x8ivh")
 animation_player = NodePath("AnimationPlayer")
 
-[node name="Facing" type="Node2D" parent="." node_paths=PackedStringArray("limbo_hsm")]
+[node name="Facing" type="Node2D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("3_esge8")
-limbo_hsm = NodePath("../LimboHSM")
+player = NodePath("..")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Facing"]
 position = Vector2(-5, -10)
@@ -1539,45 +1006,34 @@ disabled = true
 position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_pp4jb")
 
-[node name="LimboHSM" type="LimboHSM" parent="." node_paths=PackedStringArray("player", "GroundState", "GroundAttackState", "AirState", "AirAttackState", "BlockState")]
+[node name="LimboHSM" type="LimboHSM" parent="." node_paths=PackedStringArray("Player", "GroundState", "AirState", "GroundAttackState", "BlockState")]
 blackboard_plan = SubResource("BlackboardPlan_uaivs")
 script = ExtResource("28_i21vq")
-player = NodePath("..")
+Player = NodePath("..")
 GroundState = NodePath("GroundState")
-GroundAttackState = NodePath("GroundAttack")
 AirState = NodePath("AirState")
-AirAttackState = NodePath("AirAttack")
+GroundAttackState = NodePath("GroundAttack")
 BlockState = NodePath("BlockState")
 
 [node name="GroundState" type="LimboState" parent="LimboHSM"]
 script = ExtResource("31_vo268")
 animation_name = "idle"
 
+[node name="AirState" type="LimboState" parent="LimboHSM"]
+script = ExtResource("32_iktxn")
+animation_name = "falling"
+
 [node name="GroundAttack" type="LimboState" parent="LimboHSM"]
 script = ExtResource("44_rsm1u")
 attack_1 = "attack_1"
 attack_2 = "attack_2"
 attack_3 = "attack_3"
-movement_speed_var = "attacking_run_speed"
 
 [node name="BlockState" type="LimboState" parent="LimboHSM"]
 script = ExtResource("49_k1puc")
 block = "block"
 blocking_cont = "block_cont"
-can_move = false
-can_jump = false
 animation_name = "block"
-
-[node name="AirState" type="LimboState" parent="LimboHSM"]
-script = ExtResource("32_iktxn")
-animation_name = "falling"
-
-[node name="AirAttack" type="LimboState" parent="LimboHSM"]
-script = ExtResource("73_jo27v")
-attack_1 = "air_attack1"
-attack_2 = "air_attack2"
-attack_3 = "air_attack3"
-attack_4 = "air_attackheavy"
 
 [node name="StateLabel" type="Label" parent="." node_paths=PackedStringArray("limbo_hsm")]
 offset_left = -73.0
