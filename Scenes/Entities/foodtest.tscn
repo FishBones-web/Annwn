@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b20dlm0kjq4fy"]
+
+[ext_resource type="Texture2D" uid="uid://tqyghevy5d0s" path="res://Assets/World/Tree1.png" id="1_x3o5n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g535s"]
+atlas = ExtResource("1_x3o5n")
+region = Rect2(0, 0, 105, 93)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_us8qi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g535s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xu8x"]
+size = Vector2(13, 3)
+
+[node name="tree_test" type="CharacterBody2D" groups=["food_test"]]
+collision_layer = 8
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 6)
+scale = Vector2(0.710938, 0.734375)
+sprite_frames = SubResource("SpriteFrames_us8qi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 38.5)
+shape = SubResource("RectangleShape2D_3xu8x")

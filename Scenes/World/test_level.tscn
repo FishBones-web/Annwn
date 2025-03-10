@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://by1p2jyqkj6rq"]
+[gd_scene load_steps=8 format=4 uid="uid://i0gbc5fqte06"]
 
 [ext_resource type="Texture2D" uid="uid://w1vqdrisgldu" path="res://Assets/World/Background.png" id="1_kvpc2"]
 [ext_resource type="Texture2D" uid="uid://x7e8hltjvcd8" path="res://Assets/World/TileSet-36x36.png" id="2_q4d37"]
 [ext_resource type="PackedScene" uid="uid://dqm8to35jixto" path="res://Scenes/Player/player.tscn" id="3_ng0p3"]
-[ext_resource type="PackedScene" uid="uid://btgor4bfktxd7" path="res://Scenes/Entities/test_enemy.tscn" id="4_p4pe8"]
-[ext_resource type="PackedScene" uid="uid://b20dlm0kjq4fy" path="res://Scenes/Entities/foodtest.tscn" id="5_cvicp"]
+[ext_resource type="PackedScene" uid="uid://c3ooblhag1px8" path="res://Scenes/test_enemy.tscn" id="4_p4pe8"]
+
+[sub_resource type="Resource" id="Resource_1n0lg"]
+metadata/__load_path__ = "res://Scenes/foodtest.tscn"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vln01"]
 texture = ExtResource("2_q4d37")
@@ -80,7 +82,7 @@ position = Vector2(576, 325.5)
 scale = Vector2(3.02632, 2.596)
 texture = ExtResource("1_kvpc2")
 
-[node name="CharacterBody2D" parent="Background2" instance=ExtResource("5_cvicp")]
+[node name="CharacterBody2D" parent="Background2"]
 position = Vector2(404, 483)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Background2"]

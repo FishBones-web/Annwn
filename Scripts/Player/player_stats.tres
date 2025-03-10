@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="player_stats_info" load_steps=2 format=3 uid="uid://b4saklttnsrrn"]
+
+[ext_resource type="Script" uid="uid://bfonsc7s4enu8" path="res://Scripts/Player/player_stats_data.gd" id="1_f0cg3"]
+
+[resource]
+script = ExtResource("1_f0cg3")
+run_speed = 300.0
+movement_speed_var = 600
+attacking_run_speed = 0.0
+jump_velocity = 400.0
+max_air_speed = 200.0
+air_acceleration = 200.0
+plunge = -300.0
+bounce = -100.0
+current_health = 100.0
+max_health = 100.0
+jab_damage = 20.0
+upwards_jab_damage = 25.0
+power_jab_damage = 35.0
+shield_bash_damage = 15.0
+down_pike_damage = 45.0

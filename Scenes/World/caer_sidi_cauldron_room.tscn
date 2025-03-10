@@ -1,0 +1,165 @@
+[gd_scene load_steps=24 format=3 uid="uid://v8ye0rjhnwep"]
+
+[ext_resource type="Script" uid="uid://fi8d50cvyhyb" path="res://Scripts/World/Caer_Sidi/caer_sidi_cauldron_room.gd" id="1_4vj3d"]
+[ext_resource type="Script" uid="uid://c1x8tjd2ts6cw" path="res://Scripts/camera_manager.gd" id="2_6c27s"]
+[ext_resource type="Script" uid="uid://dmk4w3w5ypuvx" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_oxcca"]
+[ext_resource type="Script" uid="uid://42jdkjn6i73p" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_75eib"]
+[ext_resource type="Texture2D" uid="uid://7m5kud1rv8pc" path="res://Assets/Environment/Caer/Cauldron_room/outerback.png" id="5_bovj4"]
+[ext_resource type="PackedScene" uid="uid://dqm8to35jixto" path="res://Scenes/Player/player.tscn" id="6_exjlp"]
+[ext_resource type="Texture2D" uid="uid://cxev8timd5g7a" path="res://Assets/Environment/Caer/Cauldron_room/back.png" id="6_qqyxw"]
+[ext_resource type="Texture2D" uid="uid://canfdcbn5005s" path="res://Assets/Environment/Caer/Cauldron_room/wheel.png" id="7_cqa40"]
+[ext_resource type="Script" uid="uid://cx2qyeyx2ynf" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_pqvuw"]
+[ext_resource type="Script" uid="uid://bhmfqlhth6d1v" path="res://Scenes/door.gd" id="8_cwlyo"]
+[ext_resource type="Texture2D" uid="uid://8s0igplr5by5" path="res://Assets/Environment/Caer/Cauldron_room/spikes_back.png" id="8_g4gao"]
+[ext_resource type="Texture2D" uid="uid://dk6y1boqw25rp" path="res://Assets/UI/tempE.png" id="9_1t6vs"]
+[ext_resource type="Texture2D" uid="uid://dl5o3uv2iixxp" path="res://Assets/Environment/Caer/Cauldron_room/mid_back.png" id="9_h5xbq"]
+[ext_resource type="Texture2D" uid="uid://cofoku5tsfme6" path="res://Assets/Environment/Caer/hall_cauld_door_broken.png" id="9_qqyxw"]
+[ext_resource type="PackedScene" uid="uid://cb1u6a3n7dov3" path="res://Scenes/Misc/pair_dadeni.tscn" id="10_btakf"]
+[ext_resource type="Texture2D" uid="uid://drpepsofadmk8" path="res://Assets/Environment/Caer/Cauldron_room/mid_front.png" id="15_4j6ht"]
+[ext_resource type="Script" uid="uid://b1n0u275aea0x" path="res://Scenes/World/wheelint.gd" id="15_cqa40"]
+[ext_resource type="Texture2D" uid="uid://cpmr0emacx581" path="res://Assets/Environment/Caer/Cauldron_room/spikes_front.png" id="16_4gf7q"]
+[ext_resource type="Texture2D" uid="uid://b3cswhv762a6" path="res://Assets/Environment/Caer/Cauldron_room/front.png" id="17_3j3x2"]
+
+[sub_resource type="Resource" id="Resource_ngy2q"]
+script = ExtResource("4_75eib")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0pk2"]
+size = Vector2(114, 252)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4gao"]
+size = Vector2(72, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5xbq"]
+size = Vector2(522.5, 897.5)
+
+[node name="CaerSidiCauldronRoom" type="Node2D" node_paths=PackedStringArray("player", "blocker", "blocker2", "spike_collision")]
+script = ExtResource("1_4vj3d")
+player = NodePath("Player")
+blocker = NodePath("Front/SpikesFront")
+blocker2 = NodePath("back/SpikesBack")
+spike_collision = NodePath("Front/SpikesFront/CollisionShape2D")
+
+[node name="Camera_Manager" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("2_6c27s")
+player = NodePath("../Player")
+
+[node name="PhantomCamera2D" type="Node2D" parent="Camera_Manager"]
+position = Vector2(730, 400)
+script = ExtResource("3_oxcca")
+priority = 1
+zoom = Vector2(0.8, 0.8)
+tween_resource = SubResource("Resource_ngy2q")
+draw_limits = true
+
+[node name="outerback" type="Sprite2D" parent="."]
+
+[node name="Outerback" type="Sprite2D" parent="outerback"]
+position = Vector2(741, 393)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_bovj4")
+
+[node name="back" type="Sprite2D" parent="."]
+position = Vector2(562.75, 332.5)
+scale = Vector2(0.434588, 0.454134)
+
+[node name="Back" type="Sprite2D" parent="back"]
+position = Vector2(423.965, 128.817)
+scale = Vector2(0.920412, 0.880797)
+texture = ExtResource("6_qqyxw")
+
+[node name="SpikesBack" type="Sprite2D" parent="back"]
+position = Vector2(442.373, 133.221)
+scale = Vector2(0.920412, 0.880797)
+texture = ExtResource("8_g4gao")
+
+[node name="MidBack" type="Sprite2D" parent="back"]
+position = Vector2(426.266, 135.423)
+scale = Vector2(0.920412, 0.880797)
+texture = ExtResource("9_h5xbq")
+
+[node name="HallCauldDoorBroken" type="Sprite2D" parent="."]
+position = Vector2(421, 343)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("9_qqyxw")
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
+polygon = PackedVector2Array(-19, 783, -13, 115, 158, 113, 170, 636, 256, 636, 244, 648, 953, 645, 1050, 591, 1261, 587, 1260, 643, 1413, 642, 1418, 611, 1432, 220, 1550, 232, 1511, 781)
+
+[node name="Player" parent="." instance=ExtResource("6_exjlp")]
+position = Vector2(508, 654)
+scale = Vector2(0.6, 0.6)
+
+[node name="PhantomCameraHost" type="Node" parent="."]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("7_pqvuw")
+
+[node name="DoorDect" type="Area2D" parent="." node_paths=PackedStringArray("int_UI")]
+collision_mask = 3
+script = ExtResource("8_cwlyo")
+int_UI = NodePath("../TempE")
+next_scene = &"Caer_Sidi"
+current_scene = &"Cauldron_room"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorDect"]
+position = Vector2(433, 523)
+shape = SubResource("RectangleShape2D_e0pk2")
+
+[node name="TempE" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(437, 306)
+scale = Vector2(0.514286, 0.576923)
+texture = ExtResource("9_1t6vs")
+
+[node name="Pair_Dadeni" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_btakf")]
+position = Vector2(1157, 523)
+scale = Vector2(0.8, 0.8)
+player = NodePath("../Player")
+current_scene = "Cauldron_room"
+
+[node name="wheelint" type="Area2D" parent="." node_paths=PackedStringArray("blocker", "blocker2")]
+script = ExtResource("15_cqa40")
+blocker = NodePath("../Front/SpikesFront")
+blocker2 = NodePath("../back/SpikesBack")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wheelint"]
+position = Vector2(253, 582.5)
+shape = SubResource("RectangleShape2D_g4gao")
+
+[node name="Front" type="Sprite2D" parent="."]
+
+[node name="MidFront" type="Sprite2D" parent="Front"]
+position = Vector2(746, 396)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("15_4j6ht")
+
+[node name="Wheel" type="Sprite2D" parent="Front"]
+position = Vector2(162, 385)
+scale = Vector2(0.434588, 0.454134)
+texture = ExtResource("7_cqa40")
+
+[node name="SpikesFront" type="StaticBody2D" parent="Front"]
+position = Vector2(744, 392)
+scale = Vector2(0.4, 0.4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front/SpikesFront"]
+position = Vector2(975, 107.5)
+shape = SubResource("RectangleShape2D_h5xbq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Front/SpikesFront"]
+texture = ExtResource("16_4gf7q")
+
+[node name="Front2" type="Sprite2D" parent="Front"]
+position = Vector2(744, 394)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("17_3j3x2")
+
+[connection signal="body_entered" from="DoorDect" to="DoorDect" method="_on_body_entered"]
+[connection signal="body_exited" from="DoorDect" to="DoorDect" method="_on_body_exited"]
+[connection signal="body_entered" from="wheelint" to="wheelint" method="_on_body_entered"]
+[connection signal="body_exited" from="wheelint" to="wheelint" method="_on_body_exited"]

@@ -1,0 +1,363 @@
+[gd_scene load_steps=43 format=3 uid="uid://dcvptnjovyoxq"]
+
+[ext_resource type="Script" uid="uid://dmbnbok4t8mwu" path="res://Scripts/World/Caer_Sidi/Caer_Sidi.gd" id="1_k5su7"]
+[ext_resource type="Script" uid="uid://c1x8tjd2ts6cw" path="res://Scripts/camera_manager.gd" id="2_t8dgu"]
+[ext_resource type="Script" uid="uid://dmk4w3w5ypuvx" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_alk0r"]
+[ext_resource type="Script" uid="uid://42jdkjn6i73p" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_5vij2"]
+[ext_resource type="Texture2D" uid="uid://bot5hefi8tf0w" path="res://Assets/Environment/areatest/back.png" id="5_8pp44"]
+[ext_resource type="Texture2D" uid="uid://bxrxi3g2mj7pw" path="res://Assets/Environment/areatest/back_mid.png" id="6_veca0"]
+[ext_resource type="Texture2D" uid="uid://8uotqoxph554" path="res://Assets/Environment/areatest/back_front.png" id="7_ibq8s"]
+[ext_resource type="Texture2D" uid="uid://yhtawt4c0u23" path="res://Assets/Environment/areatest/mid.png" id="8_yvd73"]
+[ext_resource type="Texture2D" uid="uid://1lgyjugp0nxg" path="res://Assets/Environment/Caer/tower_1/placeholder.png" id="9_dkkmo"]
+[ext_resource type="Texture2D" uid="uid://cq0edp0d3o7ju" path="res://Assets/Environment/Caer/hall_back.png" id="9_dl3ha"]
+[ext_resource type="Texture2D" uid="uid://cofoku5tsfme6" path="res://Assets/Environment/Caer/hall_cauld_door_broken.png" id="10_8171g"]
+[ext_resource type="Texture2D" uid="uid://d2bx5yhn6wxft" path="res://icon.svg" id="10_gjqif"]
+[ext_resource type="Script" uid="uid://bhmfqlhth6d1v" path="res://Scenes/door.gd" id="10_rbuyk"]
+[ext_resource type="Texture2D" uid="uid://b0lp4w1xl8fuj" path="res://Assets/Environment/Caer/hall_cauld_door_chains.png" id="11_scji7"]
+[ext_resource type="PackedScene" uid="uid://dqm8to35jixto" path="res://Scenes/Player/player.tscn" id="11_v56gx"]
+[ext_resource type="Texture2D" uid="uid://bubrm05wkyh0w" path="res://Assets/Environment/areatest/mid_front.png" id="12_uts7y"]
+[ext_resource type="Texture2D" uid="uid://cv02u12lmts6j" path="res://Assets/Environment/Caer/spike_doorlock_down.png" id="13_gjqif"]
+[ext_resource type="Texture2D" uid="uid://den05ibapv1pv" path="res://Assets/Environment/areatest/shadow_mid.png" id="13_xtfya"]
+[ext_resource type="Texture2D" uid="uid://c6fd5s0274kxj" path="res://Assets/Environment/Caer/spike_doorlock_up.png" id="14_5g4pg"]
+[ext_resource type="Texture2D" uid="uid://hkryaj7ltc7b" path="res://Assets/Environment/areatest/front_mid.png" id="14_b1tq6"]
+[ext_resource type="Texture2D" uid="uid://cgv0d7lg0mx1c" path="res://Assets/Environment/areatest/front.png" id="15_i3njr"]
+[ext_resource type="Texture2D" uid="uid://dkb1siudivqx4" path="res://Assets/Environment/Caer/study/studyplh.png" id="15_lvwi7"]
+[ext_resource type="Script" uid="uid://cx2qyeyx2ynf" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="16_eexpp"]
+[ext_resource type="Texture2D" uid="uid://dk6y1boqw25rp" path="res://Assets/UI/tempE.png" id="17_mq7ld"]
+[ext_resource type="Texture2D" uid="uid://4bsx1cjs6ogd" path="res://Assets/Environment/Caer/hall_front.png" id="19_bedkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1cio"]
+size = Vector2(5812, 3369)
+
+[sub_resource type="Resource" id="Resource_hfi36"]
+script = ExtResource("4_5vij2")
+duration = 1.0
+transition = 1
+ease = 2
+
+[sub_resource type="Resource" id="Resource_tu8bs"]
+script = ExtResource("4_5vij2")
+duration = 1.0
+transition = 1
+ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3u7g"]
+size = Vector2(1308, 830)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkkmo"]
+size = Vector2(2475, 3352)
+
+[sub_resource type="Resource" id="Resource_gjqif"]
+script = ExtResource("4_5vij2")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g4pg"]
+size = Vector2(1485, 986.5)
+
+[sub_resource type="Resource" id="Resource_lvwi7"]
+script = ExtResource("4_5vij2")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g2ki"]
+atlas = ExtResource("10_8171g")
+region = Rect2(0, 0, 2112, 1359)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llj0x"]
+atlas = ExtResource("11_scji7")
+region = Rect2(0, 0, 2112, 1359)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_84fob"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g2ki")
+}],
+"loop": true,
+"name": &"Broken_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llj0x")
+}],
+"loop": true,
+"name": &"Chained_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmxf7"]
+atlas = ExtResource("13_gjqif")
+region = Rect2(0, 0, 198, 628)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8fcr"]
+atlas = ExtResource("14_5g4pg")
+region = Rect2(0, 0, 198, 628)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irccb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmxf7")
+}],
+"loop": true,
+"name": &"Spikes_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8fcr")
+}],
+"loop": true,
+"name": &"Spikes_up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjqif"]
+size = Vector2(125.746, 594.948)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ehcg"]
+size = Vector2(207, 365)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmxf7"]
+size = Vector2(306, 46)
+
+[node name="Caer_Sidi" type="Node2D" node_paths=PackedStringArray("player", "hall_spikes_obj")]
+script = ExtResource("1_k5su7")
+player = NodePath("Player")
+hall_spikes_obj = NodePath("EnvironmentBack/Smaller_rooms/Hall/hall_spikes/Hall_Spikes")
+
+[node name="CameraManager" type="Node" parent="." node_paths=PackedStringArray("player", "Camera_Zone0", "Camera_Zone1", "Camera_Zone2", "Camera_Zone3")]
+script = ExtResource("2_t8dgu")
+player = NodePath("../Player")
+Camera_Zone0 = NodePath("CameraNodes/Zone_0/Zone_0")
+Camera_Zone1 = NodePath("CameraNodes/Zone_1/Zone_1")
+Camera_Zone2 = NodePath("CameraNodes/zone_2/Zone_2")
+Camera_Zone3 = NodePath("CameraNodes/zone_3/Zone_3")
+
+[node name="CameraNodes" type="StaticBody2D" parent="CameraManager"]
+
+[node name="Zone_0" type="Area2D" parent="CameraManager/CameraNodes"]
+position = Vector2(1, 0)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/CameraNodes/Zone_0"]
+position = Vector2(3031, 2081.5)
+shape = SubResource("RectangleShape2D_g1cio")
+
+[node name="Zone_0" type="Node2D" parent="CameraManager/CameraNodes/Zone_0"]
+position = Vector2(3000, 2160)
+script = ExtResource("3_alk0r")
+zoom = Vector2(0.2, 0.2)
+tween_resource = SubResource("Resource_hfi36")
+draw_limits = true
+
+[node name="Zone_1" type="Area2D" parent="CameraManager/CameraNodes"]
+position = Vector2(6628, 2391)
+collision_mask = 2
+
+[node name="Zone_1" type="Node2D" parent="CameraManager/CameraNodes/Zone_1"]
+position = Vector2(-20, 580)
+script = ExtResource("3_alk0r")
+zoom = Vector2(0.9, 0.9)
+tween_resource = SubResource("Resource_tu8bs")
+draw_limits = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/CameraNodes/Zone_1"]
+position = Vector2(-10, 575)
+shape = SubResource("RectangleShape2D_x3u7g")
+
+[node name="zone_2" type="Area2D" parent="CameraManager/CameraNodes"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/CameraNodes/zone_2"]
+position = Vector2(8723.5, 1679)
+shape = SubResource("RectangleShape2D_dkkmo")
+
+[node name="Zone_2" type="Node2D" parent="CameraManager/CameraNodes/zone_2" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(3796, 2827)
+script = ExtResource("3_alk0r")
+follow_mode = 1
+follow_target = NodePath("../../../../Player")
+zoom = Vector2(0.6, 0.6)
+tween_resource = SubResource("Resource_gjqif")
+draw_limits = true
+limit_right = 9771
+limit_bottom = 3367
+metadata/_custom_type_script = "uid://dmk4w3w5ypuvx"
+
+[node name="zone_3" type="Area2D" parent="CameraManager/CameraNodes"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/CameraNodes/zone_3"]
+position = Vector2(6727.5, 2031.75)
+shape = SubResource("RectangleShape2D_5g4pg")
+
+[node name="Zone_3" type="Node2D" parent="CameraManager/CameraNodes/zone_3"]
+position = Vector2(6700, 2060)
+script = ExtResource("3_alk0r")
+zoom = Vector2(0.78, 0.7)
+tween_resource = SubResource("Resource_lvwi7")
+draw_limits = true
+metadata/_custom_type_script = "uid://dmk4w3w5ypuvx"
+
+[node name="EnvironmentBack" type="Sprite2D" parent="."]
+
+[node name="Main_Hall" type="Sprite2D" parent="EnvironmentBack"]
+
+[node name="Back" type="Sprite2D" parent="EnvironmentBack/Main_Hall"]
+position = Vector2(3000, 2000)
+texture = ExtResource("5_8pp44")
+
+[node name="BackMid" type="Sprite2D" parent="EnvironmentBack/Main_Hall"]
+position = Vector2(3000, 2000)
+texture = ExtResource("6_veca0")
+
+[node name="BackFront" type="Sprite2D" parent="EnvironmentBack/Main_Hall"]
+position = Vector2(3000, 2000)
+texture = ExtResource("7_ibq8s")
+
+[node name="Mid" type="Sprite2D" parent="EnvironmentBack/Main_Hall"]
+position = Vector2(3000, 2000)
+texture = ExtResource("8_yvd73")
+
+[node name="Smaller_rooms" type="Sprite2D" parent="EnvironmentBack"]
+
+[node name="Tower_1" type="Sprite2D" parent="EnvironmentBack/Smaller_rooms"]
+
+[node name="Placeholder" type="Sprite2D" parent="EnvironmentBack/Smaller_rooms/Tower_1"]
+position = Vector2(8537, 1934)
+scale = Vector2(0.5, 0.497)
+texture = ExtResource("9_dkkmo")
+
+[node name="Icon" type="Sprite2D" parent="EnvironmentBack/Smaller_rooms/Tower_1"]
+position = Vector2(8666, 3280)
+scale = Vector2(2.58984, 1.14844)
+texture = ExtResource("10_gjqif")
+
+[node name="Hall" type="Sprite2D" parent="EnvironmentBack/Smaller_rooms"]
+
+[node name="HallBack" type="Sprite2D" parent="EnvironmentBack/Smaller_rooms/Hall"]
+position = Vector2(6607, 2952)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_dl3ha")
+
+[node name="Hall_door" type="AnimatedSprite2D" parent="EnvironmentBack/Smaller_rooms/Hall"]
+position = Vector2(6606, 2954)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_84fob")
+animation = &"Broken_idle"
+
+[node name="hall_spikes" type="StaticBody2D" parent="EnvironmentBack/Smaller_rooms/Hall"]
+position = Vector2(7118, 3170)
+scale = Vector2(0.532826, 0.514331)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Hall_Spikes" type="AnimatedSprite2D" parent="EnvironmentBack/Smaller_rooms/Hall/hall_spikes"]
+sprite_frames = SubResource("SpriteFrames_irccb")
+animation = &"Spikes_up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnvironmentBack/Smaller_rooms/Hall/hall_spikes"]
+position = Vector2(-2.81445, -52.4946)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_gjqif")
+
+[node name="Study" type="Sprite2D" parent="EnvironmentBack/Smaller_rooms"]
+
+[node name="Studyplh" type="Sprite2D" parent="EnvironmentBack/Smaller_rooms/Study"]
+position = Vector2(6743, 2052)
+scale = Vector2(0.447469, 0.484633)
+texture = ExtResource("15_lvwi7")
+
+[node name="CaerDoorDect" type="Area2D" parent="." node_paths=PackedStringArray("int_UI")]
+position = Vector2(7000, 3200)
+collision_mask = 3
+script = ExtResource("10_rbuyk")
+int_UI = NodePath("../TempE")
+next_scene = &"Cauldron_room"
+current_scene = &"Caer_Sidi"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaerDoorDect"]
+position = Vector2(-373.5, -78.5)
+shape = SubResource("RectangleShape2D_4ehcg")
+
+[node name="TempE" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(6858, 2831)
+scale = Vector2(0.728571, 0.730769)
+texture = ExtResource("17_mq7ld")
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
+polygon = PackedVector2Array(1928, 3540, 1934, 3354, 1972, 3328, 2043, 3281, 2076, 3252, 2444, 3253, 2573, 3361, 2608, 3378, 3612, 3380, 3736, 3274, 5495, 3281, 6071, 3298, 7150, 3299, 8137, 3312, 9860, 3330, 9876, 3567, 5989, 3623, 5804, 3853, 1918, 3872)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Collisions"]
+polygon = PackedVector2Array(3462, 2131, 3567, 2012, 3528, 1995, 3546, 1938, 4932, 1905, 5148, 1896, 5351, 1897, 5339, 1459, 5610, 1459, 5589, 2145, 4454, 2219, 4489, 2104, 4483, 1999, 3641, 1999)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Collisions"]
+polygon = PackedVector2Array(25, 3746, 725, 3736, 933, 3670, 1050, 3576, 1257, 3572, 1282, 3477, 1274, 3430, 1234, 3393, 1249, 3358, 1261, 3346, 1220, 3298, 1218, 3249, 756, 3243, 752, 2669, 713, 2095, 1354, 2015, 2574, 1999, 2543, 1958, 2551, 1921, 1218, 1921, 84, 1968)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Collisions"]
+polygon = PackedVector2Array(7824, 2668, 7280, 2624, 7276, 2564, 5987, 2553, 5994, 2455, 7446, 2526, 7537, 2601, 7935, 2636, 7945, 2955, 7280, 2967, 7274, 2931, 7246, 2972, 7196, 2978, 7066, 2952, 7076, 2626, 7415, 2648)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(8404, 2691)
+shape = SubResource("RectangleShape2D_cmxf7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(9042, 2955)
+shape = SubResource("RectangleShape2D_cmxf7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(8671, 3235)
+shape = SubResource("RectangleShape2D_cmxf7")
+
+[node name="Player" parent="." instance=ExtResource("11_v56gx")]
+position = Vector2(3796, 3060)
+scale = Vector2(0.5, 0.5)
+
+[node name="EnvironmentFront" type="Sprite2D" parent="."]
+
+[node name="Main_Hall" type="Sprite2D" parent="EnvironmentFront"]
+
+[node name="ShadowMid" type="Sprite2D" parent="EnvironmentFront/Main_Hall"]
+position = Vector2(3000, 2000)
+texture = ExtResource("13_xtfya")
+
+[node name="MidFront" type="Sprite2D" parent="EnvironmentFront/Main_Hall"]
+position = Vector2(3000, 2000)
+texture = ExtResource("12_uts7y")
+
+[node name="FrontMid" type="Sprite2D" parent="EnvironmentFront/Main_Hall"]
+position = Vector2(3000, 2000)
+texture = ExtResource("14_b1tq6")
+
+[node name="Front" type="Sprite2D" parent="EnvironmentFront/Main_Hall"]
+position = Vector2(3000, 2000)
+texture = ExtResource("15_i3njr")
+
+[node name="Smaller_rooms" type="Sprite2D" parent="EnvironmentFront"]
+
+[node name="HallFront" type="Sprite2D" parent="EnvironmentFront/Smaller_rooms"]
+position = Vector2(6607, 2956)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("19_bedkp")
+
+[node name="PhantomCameraHost" type="Node" parent="."]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("16_eexpp")
+
+[connection signal="body_entered" from="CameraManager/CameraNodes/Zone_0" to="CameraManager" method="_on_zone_01_body_entered"]
+[connection signal="body_entered" from="CameraManager/CameraNodes/Zone_1" to="CameraManager" method="_on_zone_1_body_entered"]
+[connection signal="body_entered" from="CameraManager/CameraNodes/zone_2" to="CameraManager" method="_on_zone_2_body_entered"]
+[connection signal="body_entered" from="CameraManager/CameraNodes/zone_3" to="CameraManager" method="_on_zone_3_body_entered"]
+[connection signal="body_entered" from="CaerDoorDect" to="CaerDoorDect" method="_on_body_entered"]
+[connection signal="body_exited" from="CaerDoorDect" to="CaerDoorDect" method="_on_body_exited"]

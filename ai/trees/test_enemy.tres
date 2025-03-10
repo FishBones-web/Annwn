@@ -1,0 +1,143 @@
+[gd_resource type="BehaviorTree" load_steps=36 format=3 uid="uid://cpqdr8uf1y15t"]
+
+[ext_resource type="Script" uid="uid://d0bc1mxtwt1cx" path="res://ai/tasks/Navigation/Chooserandopos.gd" id="1_3gl60"]
+[ext_resource type="Script" uid="uid://drwvpyt7dx7j4" path="res://ai/tasks/Navigation/Move_to_pos.gd" id="2_bh3a1"]
+[ext_resource type="Script" uid="uid://bkatblbi3otou" path="res://ai/tasks/Navigation/Find_Target.gd" id="3_2pfwe"]
+[ext_resource type="Script" uid="uid://pv58wtkgpj56" path="res://ai/tasks/Navigation/move_to_target.gd" id="4_3rcir"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_k7olg"]
+var/hungry/name = &"hungry"
+var/hungry/type = 1
+var/hungry/value = false
+var/hungry/hint = 0
+var/hungry/hint_string = "if the enemy is hungry"
+var/hunger_meter_var_float/name = &"hunger_meter_var_float"
+var/hunger_meter_var_float/type = 3
+var/hunger_meter_var_float/value = 0.0
+var/hunger_meter_var_float/hint = 0
+var/hunger_meter_var_float/hint_string = "the number of the hunger meter"
+
+[sub_resource type="BTCheckTrigger" id="BTCheckTrigger_40sgh"]
+variable = &"hungry"
+
+[sub_resource type="BTAction" id="BTAction_bbf5t"]
+script = ExtResource("3_2pfwe")
+group = &"food_test"
+target_var = &"target"
+
+[sub_resource type="BTAction" id="BTAction_26n7x"]
+script = ExtResource("4_3rcir")
+target_var = &"target"
+speed_var = 60
+tolerance = 20
+
+[sub_resource type="BTComment" id="BTComment_yu0v3"]
+custom_name = "Play animtion here"
+
+[sub_resource type="BTWait" id="BTWait_gx2h4"]
+
+[sub_resource type="BBVariant" id="BBVariant_cvpo0"]
+type = 3
+saved_value = 100.0
+resource_name = "100"
+
+[sub_resource type="BTSetVar" id="BTSetVar_kfv3l"]
+variable = &"hunger_meter_var_float"
+value = SubResource("BBVariant_cvpo0")
+
+[sub_resource type="BBVariant" id="BBVariant_f4bel"]
+type = 1
+saved_value = false
+resource_name = "false"
+
+[sub_resource type="BTSetVar" id="BTSetVar_nhnm3"]
+variable = &"hungry"
+value = SubResource("BBVariant_f4bel")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_e478g"]
+text = "Enemy has eaten"
+
+[sub_resource type="BTSequence" id="BTSequence_038pq"]
+custom_name = "Seek Food"
+children = [SubResource("BTCheckTrigger_40sgh"), SubResource("BTAction_bbf5t"), SubResource("BTAction_26n7x"), SubResource("BTComment_yu0v3"), SubResource("BTWait_gx2h4"), SubResource("BTSetVar_kfv3l"), SubResource("BTSetVar_nhnm3"), SubResource("BTConsolePrint_e478g")]
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_vtsv8"]
+text = "Random move"
+
+[sub_resource type="BTAction" id="BTAction_ckakx"]
+script = ExtResource("1_3gl60")
+range_min = 40.0
+range_max = 100.0
+position_var = &"pos"
+dir_var = &"dir"
+
+[sub_resource type="BTAction" id="BTAction_n262g"]
+script = ExtResource("2_bh3a1")
+target_pos_var = &"pos"
+dir_var = &"dir"
+speed_var = 40
+tolerance = 10
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_ohv3w"]
+max_duration = 4.0
+
+[sub_resource type="BTSequence" id="BTSequence_5wfrq"]
+custom_name = "Idle Seq"
+children = [SubResource("BTRandomWait_ohv3w")]
+
+[sub_resource type="BTSequence" id="BTSequence_fgdpe"]
+custom_name = "Random move seq"
+children = [SubResource("BTConsolePrint_vtsv8"), SubResource("BTAction_ckakx"), SubResource("BTAction_n262g"), SubResource("BTSequence_5wfrq")]
+
+[sub_resource type="BTProbability" id="BTProbability_7pagj"]
+children = [SubResource("BTSequence_fgdpe")]
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_uavkj"]
+text = "Moving to kind"
+
+[sub_resource type="BTAction" id="BTAction_grqgy"]
+script = ExtResource("3_2pfwe")
+group = &"Test_enemy"
+target_var = &"target"
+
+[sub_resource type="BTAction" id="BTAction_mft3e"]
+script = ExtResource("4_3rcir")
+target_var = &"target"
+speed_var = 60
+tolerance = 30
+
+[sub_resource type="BTWait" id="BTWait_axpuy"]
+
+[sub_resource type="BTSequence" id="BTSequence_tsky5"]
+custom_name = "Move to Kind"
+children = [SubResource("BTConsolePrint_uavkj"), SubResource("BTAction_grqgy"), SubResource("BTAction_mft3e"), SubResource("BTWait_axpuy")]
+
+[sub_resource type="BTProbability" id="BTProbability_cid2r"]
+children = [SubResource("BTSequence_tsky5")]
+
+[sub_resource type="BTAction" id="BTAction_r08yo"]
+script = ExtResource("3_2pfwe")
+group = &"Player"
+target_var = &"target"
+
+[sub_resource type="BTAction" id="BTAction_54vob"]
+script = ExtResource("4_3rcir")
+target_var = &"target"
+speed_var = 60
+tolerance = 20
+
+[sub_resource type="BTWait" id="BTWait_8tkvw"]
+
+[sub_resource type="BTSequence" id="BTSequence_rc3q3"]
+custom_name = "Move to Player"
+children = [SubResource("BTAction_r08yo"), SubResource("BTAction_54vob"), SubResource("BTWait_8tkvw")]
+
+[sub_resource type="BTProbability" id="BTProbability_un1cx"]
+children = [SubResource("BTSequence_rc3q3")]
+
+[sub_resource type="BTDynamicSelector" id="BTDynamicSelector_m4o1e"]
+children = [SubResource("BTSequence_038pq"), SubResource("BTProbability_7pagj"), SubResource("BTProbability_cid2r"), SubResource("BTProbability_un1cx")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_k7olg")
+root_task = SubResource("BTDynamicSelector_m4o1e")

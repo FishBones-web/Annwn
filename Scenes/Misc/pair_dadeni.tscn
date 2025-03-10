@@ -1,0 +1,269 @@
+[gd_scene load_steps=22 format=3 uid="uid://cb1u6a3n7dov3"]
+
+[ext_resource type="Script" uid="uid://5mjuvdt14d8r" path="res://Scripts/World/pair_dadeni.gd" id="1_vy4nq"]
+[ext_resource type="Texture2D" uid="uid://dj80nr7xylvxk" path="res://Assets/Environment/Pair_Dadeni/wood_unlit.png" id="2_0c0ws"]
+[ext_resource type="Texture2D" uid="uid://1j2i1ytrflur" path="res://Assets/Environment/Pair_Dadeni/wood_lit.png" id="3_48eq3"]
+[ext_resource type="Texture2D" uid="uid://gqb7v1ysfv7c" path="res://Assets/Environment/Pair_Dadeni/cauldron.png" id="4_68spd"]
+[ext_resource type="Texture2D" uid="uid://dmy6fja537136" path="res://Assets/Environment/Pair_Dadeni/fire1.png" id="5_fwyjr"]
+[ext_resource type="Texture2D" uid="uid://oeucsbd5emrj" path="res://Assets/Environment/Pair_Dadeni/fire2.png" id="6_cyoxq"]
+[ext_resource type="Texture2D" uid="uid://62wcqtvn27vc" path="res://Assets/Environment/Pair_Dadeni/fire3.png" id="7_6lkyq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bg60"]
+atlas = ExtResource("2_0c0ws")
+region = Rect2(0, 0, 318, 450)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh180"]
+atlas = ExtResource("3_48eq3")
+region = Rect2(0, 0, 318, 450)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gdv3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bg60")
+}],
+"loop": true,
+"name": &"woodpile",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fh180")
+}],
+"loop": true,
+"name": &"woodpile_lit",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pegaq"]
+atlas = ExtResource("4_68spd")
+region = Rect2(0, 0, 318, 450)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cf4g5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pegaq")
+}],
+"loop": true,
+"name": &"cauldron",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pn4i"]
+atlas = ExtResource("5_fwyjr")
+region = Rect2(0, 0, 318, 450)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws5xf"]
+atlas = ExtResource("6_cyoxq")
+region = Rect2(0, 0, 318, 450)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mij3w"]
+atlas = ExtResource("7_6lkyq")
+region = Rect2(0, 0, 318, 450)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mt2ll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pn4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws5xf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mij3w")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"no_fire",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t20db"]
+radius = 125.575
+
+[sub_resource type="Animation" id="Animation_t6u3j"]
+resource_name = "Activated"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wood:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"woodpile_lit"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pot:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"cauldron"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fire:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fire"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fire:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_6qamb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pot:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"cauldron"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fire:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fire"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fire:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_0c0ws"]
+resource_name = "Unlit"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wood:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"woodpile"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pot:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"cauldron"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fire:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"no_fire"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r07ph"]
+_data = {
+&"Activated": SubResource("Animation_t6u3j"),
+&"RESET": SubResource("Animation_6qamb"),
+&"Unlit": SubResource("Animation_0c0ws")
+}
+
+[node name="Pair_Dadeni" type="Sprite2D"]
+script = ExtResource("1_vy4nq")
+
+[node name="wood" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -3)
+scale = Vector2(0.598086, 0.622667)
+sprite_frames = SubResource("SpriteFrames_gdv3h")
+animation = &"woodpile"
+autoplay = "woodpile"
+frame_progress = 0.666637
+
+[node name="pot" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -7)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_cf4g5")
+animation = &"cauldron"
+autoplay = "cauldron"
+
+[node name="fire" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_mt2ll")
+animation = &"fire"
+frame = 1
+
+[node name="Interaction_zone" type="Area2D" parent="."]
+visible = false
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_zone"]
+position = Vector2(12, -13)
+shape = SubResource("CircleShape2D_t20db")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r07ph")
+}
+
+[connection signal="body_entered" from="Interaction_zone" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="Interaction_zone" to="." method="_on_interaction_zone_body_exited"]
