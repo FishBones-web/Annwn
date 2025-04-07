@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://w1vqdrisgldu" path="res://Assets/World/Background.png" id="1_kvpc2"]
 [ext_resource type="Texture2D" uid="uid://x7e8hltjvcd8" path="res://Assets/World/TileSet-36x36.png" id="2_q4d37"]
 [ext_resource type="PackedScene" uid="uid://dqm8to35jixto" path="res://Scenes/Player/player.tscn" id="3_ng0p3"]
-[ext_resource type="PackedScene" uid="uid://c3ooblhag1px8" path="res://Scenes/test_enemy.tscn" id="4_p4pe8"]
+[ext_resource type="PackedScene" uid="uid://c3ooblhag1px8" path="res://Scenes/Entities/test_enemy.tscn" id="4_p4pe8"]
 
 [sub_resource type="Resource" id="Resource_1n0lg"]
 metadata/__load_path__ = "res://Scenes/foodtest.tscn"

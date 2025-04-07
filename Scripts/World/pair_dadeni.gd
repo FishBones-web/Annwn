@@ -20,6 +20,7 @@ func _process(_delta: float) -> void:
 		animation_player.play("Activated")
 		var data = ResourceLoader.load("user://data.res") as Data
 		data.current_health = data.max_health
+		player.update_health()
 		print(data.current_health)
 		save()
 

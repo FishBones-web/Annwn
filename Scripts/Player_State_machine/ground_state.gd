@@ -27,5 +27,8 @@ func _update(p_delta: float) -> void:
 	if blackboard.get_var(BBNames.block_var):
 		dispatch("blockraise")
 		
+	if blackboard.get_var(BBNames.bash_var) && Global.bash_ready:
+		dispatch("shieldbash")
+		
 	on_first_frame = false
 	

@@ -47,3 +47,13 @@ func _on_zone_2_body_entered(body) -> void:
 
 func _on_zone_3_body_entered(body) -> void:
 	update_current_zone(body, 3)
+
+
+
+
+###TESTLAB CAMERAS:
+
+
+func _on_zone_0_body_entered(body) -> void:
+	update_current_zone(body, 0)
+	

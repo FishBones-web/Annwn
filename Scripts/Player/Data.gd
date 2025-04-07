@@ -2,16 +2,16 @@
 extends Resource
 class_name Data
 ###All game data
-###just saveable stuff cos fuck, this shit cant be used as player_stats when its not a class
+
 
 ###PLAYER STATS
 ## keeps all the player stats and variables in one globally accessible place
 ##mostly for animation
-@export var run_speed = 700.0
-@export var movement_speed_var = 600
+@export var run_speed = 300.0
+@export var movement_speed_var = 400
 @export var attacking_run_speed : float = 0.0
-@export var jump_velocity : float = 800.0
-@export var max_air_speed : float = 750.0
+@export var jump_velocity : float = 500.0
+@export var max_air_speed : float = 450.0
 @export var air_acceleration : float = 500.0
 @export var plunge : float = -300
 @export var bounce : float = -100
@@ -19,6 +19,16 @@ class_name Data
 ##Combat stuff
 @export var current_health : float = 100
 @export var max_health : float = 100
+
+##recieved knockback 
+@export var knockback_x: int = 0
+@export var knockback_y: int = 0
+
+##this one gets updated with what direction the enemy was moving/facing to know what direction to knockback
+@export var knockback_dir: int
+
+
+@export var just_took_dam : bool = false
 
 
 @export var jab_damage : float = 20

@@ -19,6 +19,8 @@ var jump : bool
 var BJ_attack : bool
 var UJ_attack : bool
 var blocking : bool
+var bash : bool
+var vault : bool
 
 
 ##binds the above input vars to their blackboard property(in BBNames and in the BB manager)
@@ -33,7 +35,8 @@ func _ready() -> void:
 	blackboard.bind_var_to_property(BBNames.BJ_var, self, "BJ_attack", false)
 	blackboard.bind_var_to_property(BBNames.UJ_var, self, "UJ_attack", false)
 	blackboard.bind_var_to_property(BBNames.block_var, self, "blocking", false)
-	
+	blackboard.bind_var_to_property(BBNames.bash_var, self, "bash", false)
+	blackboard.bind_var_to_property(BBNames.volt_var, self, "vault", false)
 
 func _process(_delta: float) -> void:
 	#assigns the inputs of the input_direction. pulls from the player_input dictionarty
@@ -60,6 +63,19 @@ func _unhandled_input(event: InputEvent) -> void:
 		blocking = true
 	elif Input.is_action_just_released(player_actions.block):
 		blocking = false
+		
+	if Global.shield_bash_unlocked == true:
+		if Input.is_action_just_pressed(player_actions.shield_bash):
+			bash = true
+		if Input.is_action_just_released(player_actions.shield_bash):
+			bash = false
+	
+	if Global.vault_unlocked == true:
+		if Input.is_action_just_pressed(player_actions.vault):
+			vault = true
+		if Input.is_action_just_released(player_actions.vault):
+			vault = false
+		
 
 		
 	

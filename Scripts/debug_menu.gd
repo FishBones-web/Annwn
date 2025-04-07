@@ -35,3 +35,17 @@ func _on_negative_health_pressed() -> void:
 	data.change_health(20)
 	ResourceSaver.save(data, "user://data.res")
 	print(data.current_health)
+
+
+func _on_powerjab_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		Global.pjab_unlocked = true
+	elif !toggled_on:
+		Global.pjab_unlocked = false
+
+
+func _on_shield_bash_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		Global.shield_bash_unlocked = true
+	elif !toggled_on:
+		Global.shield_bash_unlocked = false

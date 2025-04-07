@@ -105,6 +105,7 @@ script = ExtResource("8_cwlyo")
 int_UI = NodePath("../TempE")
 next_scene = &"Caer_Sidi"
 current_scene = &"Cauldron_room"
+unlocked = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorDect"]
 position = Vector2(433, 523)

@@ -14,6 +14,11 @@ extends Resource
 @export var basic_jab : String = "basic_jab"
 @export var upwards_jab : String = "upwards_jab"
 
+@export var shield_bash : String = "shield_bash"
+@export var pike : String = "pike"
+@export var vault : String = "vault"
+@export var power_jab : String = "power_jab"
+
 @export var block : String = "block"
 
 

@@ -10,6 +10,7 @@ var data = ResourceLoader.load("user://data.res") as Data
 
 func _ready():
 	Global.preload_scene(Caer_Sidi_scene_path)
+	Global.Cauldron_room_lock = false
 	
 func _process(_delta: float) -> void:
 	if Global.cauldron_room_spikes == false:

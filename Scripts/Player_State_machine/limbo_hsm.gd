@@ -43,5 +43,10 @@ func _binding_setup():
 	add_transition(GroundState, BlockState, "blockraise")
 	add_transition(BlockState, GroundState, "finished")
 	
+	add_transition(GroundState, GroundAttackState, "shieldbash")
+	add_transition(GroundAttackState, AirState, "bashed")
+	
+	add_transition(GroundState, AirState, "vault")
+	
 
 ####

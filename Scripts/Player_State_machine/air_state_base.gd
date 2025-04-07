@@ -5,6 +5,11 @@ class_name AirStateBASE
 @export var heavyanimover : bool = true
 
 func _update(_delta: float) -> void:
+	if player_stats.just_took_dam:
+		can_move = false 
+	elif !player_stats.just_took_dam:
+		can_move = true
+		
 	if can_move:
 		air_move()
 	

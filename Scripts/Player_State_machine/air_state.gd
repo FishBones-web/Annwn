@@ -1,13 +1,29 @@
 extends AirStateBASE
+@onready var jump_timer: Timer = %JumpTimer
 
 @export var rising_animation: String = "rising"
+@export var peak_jump_animation: String = "peak_jump"
 @export var falling_animation: String = "falling"
-@export var jump_animation : String = "jump"
-var jump_lock : bool = false
+
+@export var wall_bash_animation: String = "wall_bash"
+
 
 ## on the event of "jump" being used to enter the state, calls the func _on_jump
 func _setup() -> void:
-	add_event_handler("jump", _on_jump)
+	pass
+	
+func _enter() -> void:
+	super()
+	if Input.is_action_just_pressed("vault"):
+		vault()
+		
+	if Global.bashed_wall:
+		wallbash()
+		Global.bashed_wall = false
+		
+	if Global.bashed_enemy:
+		shield_bash()
+		Global.bashed_enemy = false
 
 func _update(delta: float) -> void:
 	super(delta) #runs air_move in the daddy script
@@ -21,32 +37,53 @@ func _update(delta: float) -> void:
 	if blackboard.get_var(BBNames.UJ_var):
 		dispatch("heavyattack")
 		
-	if player.is_on_floor() && heavyanimover:
+	if player.is_on_floor():
 		###TODO add in landing animation here
+		Global.jump_lock = true
+		jump_timer.start()
 		dispatch("on_ground")
 	
 ##plays animation based on whether the velocity.y is positive or negative(falling or rising)	
 func select_animation():
-	if jump_lock:
-		return
 		
 	if player.velocity.y <= 0.0:
 		player.animation_player.play(rising_animation)
-	else:
+	#elif player.velocity.y == 0.0:
+		#player.animation_player.play(peak_jump_animation)
+	elif player.velocity.y >= 0.0:
 		player.animation_player.play(falling_animation)
-
 	
-## the func that the even handler calls when everting the state through "jump"
-#sets jum_lock to true to lock anyother animation from playing
-func _on_jump():
-	jump_lock = true
 	
-#signals from the animation player when the "jump" animation is finished. unlocks the jump lock
-##I dont think this actually works yanno
-#TODO
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == jump_animation :
-		print("jump done")
-		jump_lock = false
+func vault():
+			
+	if player.is_on_floor() && heavyanimover:
+		###TODO add in landing animation here
+		dispatch("on_ground")
 		
-		
+##this is when u hit a wall during shield bash		
+func wallbash():
+	player.animation_player.stop()
+	player.animation_player.play(wall_bash_animation)
+	var dir = Global.last_moved_dir.x
+	if dir <= 0.0:
+		player.velocity.x = 1 * 900
+	elif dir >= 0.0:
+		player.velocity.x = -1 * 900
+	player.velocity.y = -400
+	await get_tree().create_timer(1).timeout
+	player.velocity.x = 0
+	if player.is_on_floor():
+		dispatch("on_ground")
+	
+##thiis is when hitting an enemy during shielbash
+func shield_bash():
+	player.animation_player.stop()
+	player.animation_player.play(wall_bash_animation)
+	var dir = Global.last_moved_dir.x
+	if dir <= 0.0:
+		player.velocity.x = 1 * 800
+	elif dir >= 0.0:
+		player.velocity.x = -1 * 800
+	player.velocity.y = -200
+	await get_tree().create_timer(0.8).timeout
+	player.velocity.x = 0
